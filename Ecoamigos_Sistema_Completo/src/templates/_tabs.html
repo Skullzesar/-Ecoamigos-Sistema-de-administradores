@@ -1,0 +1,5 @@
+{# Pestañas de navegación (Registrar / Listar). La activa se deduce de la ruta actual. #}
+<nav class="tabs-nav">
+    <a class="tab-btn {{ 'active' if request.endpoint == 'home' }}" href="{{ url_for('home') }}">Registrar</a>
+    <a class="tab-btn {{ 'active' if request.endpoint in ('listar_usuario', 'editar_admin') }}" href="{{ url_for('listar_usuario') }}">Listar</a>
+</nav>

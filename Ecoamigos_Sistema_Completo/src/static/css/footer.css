@@ -1,0 +1,57 @@
+/* footer.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+.adso-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.btn-salida {
+    background-color: #d32f2f;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-salida:hover {
+    background-color: #b71c1c;
+    color: white; /* Bootstrap pinta los enlaces en azul y subrayados al pasar el cursor */
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 0.8rem 1rem;
+    }
+    .adso-title {
+        font-size: 1.1rem;
+    }
+    .btn-salida {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}

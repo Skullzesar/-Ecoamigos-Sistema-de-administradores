@@ -1,0 +1,10 @@
+{# Mensajes de éxito/error enviados desde app.py con flash() #}
+{% with mensajes = get_flashed_messages(with_categories=true) %}
+    {% if mensajes %}
+    <div class="mensajes">
+        {% for categoria, texto in mensajes %}
+        <div class="mensaje mensaje-{{ categoria }}" role="alert">{{ texto }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endwith %}

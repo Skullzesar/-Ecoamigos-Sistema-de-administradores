@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Filtros, Paginación y Botones</title>
+    {# Orden: Bootstrap -> DataTables (antes estaba al revés) #}
+    {% include '_vendor_css.html' %}
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Tabla Responsive con Filtros, Paginación y Botones</h2>
+        <div class="table-responsive">
+            <table id="example" class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                        <th>Profesión</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>30</td>
+                        <td>Madrid</td>
+                        <td>Ingeniero</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>María López</td>
+                        <td>25</td>
+                        <td>Barcelona</td>
+                        <td>Diseñadora</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Carlos García</td>
+                        <td>28</td>
+                        <td>Valencia</td>
+                        <td>Programador</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ana Sánchez</td>
+                        <td>32</td>
+                        <td>Sevilla</td>
+                        <td>Arquitecta</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-danger btn-sm">Borrar</button>
+                        </td>
+                    </tr>
+                    <!-- Puedes agregar más filas aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% include '_vendor_js.html' %}
+    <script>
+        ecoCargarVendor().then(function () {
+            const tablaResultadosDataTable = $('#example').DataTable({
+                responsive: true,
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron registros",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                "paging": true, // Activar paginación
+                "searching": true, // Mostrar la barra de búsqueda
+                "lengthChange": true, // Mostrar la opción de cambiar el número de filas por página
+                "info": true, // Mostrar la información del estado de la paginación
+                "scrollY": "calc(70vh - 200px)", // Fijar la altura del área de desplazamiento
+                "pagingType": "full_numbers" // Mostrar todas las paginaciones disponibles
+            });
+        }).catch(function (error) {
+            console.error("No se pudo cargar jQuery/DataTables:", error);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{# Scripts de jQuery + DataTables (requiere haber incluido antes _vendor_css.html en <head>).
+   ORDEN OBLIGATORIO: jQuery -> DataTables -> integración Bootstrap4 -> Responsive -> Responsive-Bootstrap4.
+   Uso en la página:  ecoCargarVendor().then(function () { $('#tabla').DataTable({...}); }); #}
+<script>
+  window.ecoCargarVendor = function () {
+    return EcoVendor.cargarScripts([
+      { cdn: "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js",
+        integrity: "sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs",
+        local: "{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}" },
+      { cdn: "https://cdn.jsdelivr.net/npm/datatables.net@1.11.5/js/jquery.dataTables.min.js",
+        integrity: "sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh",
+        local: "{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}" },
+      { cdn: "https://cdn.jsdelivr.net/npm/datatables.net-bs4@1.11.5/js/dataTables.bootstrap4.min.js",
+        integrity: "sha384-bX64nQ/u/Jovgh0rdhdtHy2BMWv9TOOds6b4reiVcJ0KcA76JdIxmwar1pN2NsUj",
+        local: "{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}" },
+      { cdn: "https://cdn.jsdelivr.net/npm/datatables.net-responsive@2.2.9/js/dataTables.responsive.min.js",
+        integrity: "sha384-ziUH70yXeghwn7LIJvtjobzpllxs+w4FJL4/ssbFYWoYof46CveVyQ+GCaR1eTXj",
+        local: "{{ url_for('static', filename='vendor/datatables/dataTables.responsive.min.js') }}" },
+      { cdn: "https://cdn.jsdelivr.net/npm/datatables.net-responsive-bs4@2.2.9/js/responsive.bootstrap4.min.js",
+        integrity: "sha384-iqV3x/YAPev0L8Y35rZF1e8LuilKG+h0gtjkpS6dr6HFEZ139n6Q8YcFQ3kZfKu/",
+        local: "{{ url_for('static', filename='vendor/datatables/responsive.bootstrap4.min.js') }}" }
+    ]);
+  };
+</script>

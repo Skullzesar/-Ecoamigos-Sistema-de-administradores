@@ -1,0 +1,31 @@
+<main>
+    {% include '_tabs.html' %}
+    {% include '_mensajes.html' %}
+
+    <section class="form-card" id="sec-registrar">
+        <h2>Registrar Administrador</h2>
+        <form action="{{url_for('registrarAdmin')}}" method="POST">
+            <div class="form-group">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" name="cedula" placeholder="Ingrese el número de cédula" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre completo" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" placeholder="Ingrese el número celular" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese la contraseña" required>
+            </div>
+            <button type="submit" class="btn-submit">Registrar</button>
+        </form>
+    </section>
+</main>

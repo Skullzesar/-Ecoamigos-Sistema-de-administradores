@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Ecoamigos - Administradores</title>
+    <!-- Bootstrap + DataTables (CDN con respaldo local). Orden: Bootstrap -> DataTables -> CSS propios -->
+    {% include '_vendor_css.html' %}
+
+    <!-- Estilos CSS propios, vinculados con Flask (siempre DESPUÉS de Bootstrap) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/encabezado.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+    {% include 'encabezado.html' %}
+    {% include 'listar.html' %}
+    {% include 'footer.html' %}
+</body>
+</html>

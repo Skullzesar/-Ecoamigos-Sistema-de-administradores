@@ -1,0 +1,5 @@
+Flask>=3.1,<4
+mysql-connector-python>=9.0
+python-dotenv>=1.0,<2
+# Servidor de producción (en Windows no se usa; para desarrollo basta "python src/app.py")
+gunicorn>=22; sys_platform != "win32"

@@ -1,0 +1,36 @@
+# --- Entornos virtuales (NO se suben: pesan MB, dependen de tu PC y contienen rutas personales) ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Credenciales y configuración local (NUNCA subir) ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Node (solo si algún día usas npm para las librerías front-end) ---
+node_modules/
+
+# --- Archivos del sistema y editores ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# --- Logs, bases de datos locales y copias ---
+*.log
+*.sqlite3
+*.db
+*.bak
+*.sql.bak

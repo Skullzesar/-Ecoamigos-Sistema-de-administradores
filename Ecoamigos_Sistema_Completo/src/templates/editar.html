@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Ecoamigos - Editar Administrador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/encabezado.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+    {% include 'encabezado.html' %}
+    <main>
+        {% include '_tabs.html' %}
+        {% include '_mensajes.html' %}
+
+        <section class="form-card">
+            <h2>Editar Administrador</h2>
+            <form action="{{ url_for('editar_admin', id_admin=admin.id_admin) }}" method="POST">
+                <div class="form-group">
+                    <label for="cedula">Cédula</label>
+                    <input type="text" id="cedula" value="{{ admin.id_admin }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="{{ admin.nombre }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" value="{{ admin.correo }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="celular">Celular</label>
+                    <input type="tel" id="celular" name="celular" value="{{ admin.celular }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Nueva contraseña (opcional)</label>
+                    <input type="password" id="password" name="password" placeholder="Déjela en blanco para no cambiarla" autocomplete="new-password">
+                </div>
+                <button type="submit" class="btn-submit">Guardar cambios</button>
+                <a class="btn-secundario" href="{{ url_for('listar_usuario') }}">Cancelar</a>
+            </form>
+        </section>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

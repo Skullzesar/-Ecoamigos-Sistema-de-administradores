@@ -1,0 +1,182 @@
+/* formulario.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Tabs (ahora son enlaces <a>: funcionan sin JavaScript) */
+.tabs-nav {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #a5d6a7;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #c8e6c9;
+}
+
+/* Al ser <a>, se neutralizan los estilos de enlace de Bootstrap (azul/subrayado) */
+a.tab-btn,
+a.tab-btn:hover {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.tab-btn:hover:not(.active) {
+    color: #2e7d32;
+}
+
+a.tab-btn.active,
+a.tab-btn.active:hover {
+    color: white;
+}
+
+/* Form Card */
+.form-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.form-card h2 {
+    color: #1b5e20;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1b5e20;
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* Mensajes de éxito / error (flash) */
+.mensaje {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.mensaje-ok {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #a5d6a7;
+}
+
+.mensaje-error {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ef9a9a;
+}
+
+/* Botón secundario (Cancelar) */
+.btn-secundario {
+    display: block;
+    text-align: center;
+    margin-top: 0.8rem;
+    color: #2e7d32;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-secundario:hover {
+    color: #1b5e20;
+    text-decoration: underline;
+}
+
+.form-group input[readonly] {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 1rem auto;
+    }
+    .form-card {
+        padding: 1.2rem;
+    }
+}

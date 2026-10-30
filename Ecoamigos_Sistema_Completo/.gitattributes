@@ -1,0 +1,4 @@
+# Evita que Git cambie los finales de línea (CRLF/LF) entre Windows y Linux
+* text=auto eol=lf
+*.jpg binary
+*.png binary
